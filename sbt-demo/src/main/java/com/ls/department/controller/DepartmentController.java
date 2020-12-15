@@ -1,10 +1,9 @@
-package com.ls.user.controller;
+package com.ls.department.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/departments")
 @RestController
-@RequestMapping("users")
-public class UserController {
-
+public class DepartmentController {
 }

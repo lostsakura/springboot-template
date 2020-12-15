@@ -31,7 +31,9 @@ hs_err_pid*
 .gitignore
 .idea/
 */*.iml
-*/src/test/
 *.iml
+
+*/src/test
+*/target
 
 

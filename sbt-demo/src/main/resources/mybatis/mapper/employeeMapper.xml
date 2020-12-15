@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ls.employee.mapper.EmployeeMapper">
+
+    <resultMap id="employeeMap" type="employee">
+        <id property="id" column="id" jdbcType="BIGINT" javaType="Long"/>
+        <result property="firstName" column="first_name" jdbcType="VARCHAR" javaType="String"/>
+        <result property="lastName" column="last_name" jdbcType="VARCHAR" javaType="String"/>
+        <result property="email" column="email" jdbcType="VARCHAR" javaType="String"/>
+        <result property="gender" column="gender" jdbcType="VARCHAR" javaType="String"/>
+    </resultMap>
+
+    <select id="getEmployeeById" resultType="employee" parameterType="Long">
+        select * from t_employee where id = #{id}
+    </select>
+
+    <select id="getAllEmployee" resultMap="employeeMap">
+        select * from t_employee
+    </select>
+
+    <insert id="insertEmployee">
+        INSERT INTO t_employee(first_name, last_name, email, gender) VALUES (#{firstName}, #{lastName}, #{email}, #{gender})
+    </insert>
+
+    <delete id="deleteEmployeeById" parameterType="Long">
+        DELETE FROM t_employee WHERE id = #{id}
+    </delete>
+
+    <update id="updateEmployee">
+        UPDATE t_employee
+        <set>
+            <if test="firstName != null">first_name = #{firstName},</if>
+            <if test="lastName != null">last_name = #{lastName},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="gender != null">gender = #{gender}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

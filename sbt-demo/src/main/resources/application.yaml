@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sbt-demo
+  datasource:
+    url: jdbc:mysql://test.com:3306/ls_test?setTimezone=UTC&useSSL=false&chacracterEncoding=UTF-8
+    username: root
+    password: qq282465134
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  config-location: classpath:mybatis/mybatisConfig.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
