@@ -9,16 +9,18 @@
     </settings>
 
     <typeAliases>
-        <typeAlias type="com.ls.employee.entity.EmployeeDO" alias="employee"/>
-        <typeAlias type="com.ls.department.entity.DepartmentDO" alias="department"/>
-        <package name="com.ls.user.entity"/>
+
     </typeAliases>
 
     <databaseIdProvider type="DB_VENDOR">
         <property name="MySQL" value="mysql"/>
         <property name="SQL Server" value="sqlserver"/>
         <property name="DB2" value="db2"/>
-        <property name="Oracle" value="oracle" />
+        <property name="Oracle" value="oracle"/>
+        <property name="PostgreSQL" value="postgresql"/>
+        <property name="Derby" value="derby"/>
+        <property name="HSQL" value="hsqldb"/>
+        <property name="H2" value="h2"/>
     </databaseIdProvider>
 
 </configuration>
