@@ -1,7 +1,6 @@
 package com.ls.sys.auth.mapper;
 
 import com.ls.sys.auth.domain.DO.SysRoleDO;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,5 +15,5 @@ public interface SysRoleDOMapper {
 
     int updateByPrimaryKey(SysRoleDO record);
 
-    List<SysRoleDO> selectSysRoleDOBySysUserId(@Param("userId") Long userId);
+    List<SysRoleDO> selectSysRoleDOBySysUserId(Long userId);
 }

@@ -35,7 +35,7 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public int deleteSysUserDO(Long id) {
+    public int deleteSysUserDOById(Long id) {
         return sysUserDOMapper.deleteByPrimaryKey(id);
     }
 }

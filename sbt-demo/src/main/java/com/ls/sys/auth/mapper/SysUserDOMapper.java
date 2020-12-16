@@ -1,7 +1,6 @@
 package com.ls.sys.auth.mapper;
 
 import com.ls.sys.auth.domain.DO.SysUserDO;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

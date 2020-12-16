@@ -1,7 +1,7 @@
-package com.ls.sys.auth.domain.DO;
+package com.ls.sys.auth.domain.VO;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.ls.sys.core.domain.BaseDO;
+import com.ls.sys.auth.domain.DO.SysPrivilegeDO;
+import com.ls.sys.core.domain.BaseVO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -12,13 +12,12 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Accessors(chain = true)
-@JsonIgnoreProperties(value = { "handler"})
-public class SysRoleDO extends BaseDO {
+public class SysRoleVO extends BaseVO {
     private Long id;
 
-    private String roleName;
+    private String name;
 
-    private Integer enabled;
+    private String enabled;
 
     private Long createBy;
 

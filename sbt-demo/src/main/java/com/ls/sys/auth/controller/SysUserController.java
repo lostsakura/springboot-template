@@ -1,7 +1,6 @@
 package com.ls.sys.auth.controller;
 
 import com.ls.sys.auth.convert.SysUserConvert;
-import com.ls.sys.auth.domain.DO.SysRoleDO;
 import com.ls.sys.auth.domain.DO.SysUserDO;
 import com.ls.sys.auth.domain.VO.SysUserVO;
 import com.ls.sys.auth.service.SysUserService;
@@ -21,6 +20,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     private final SysUserConvert sysUserConvert = SysUserConvert.INSTANCE;
+
 
     @GetMapping("/{id}")
     public SysUserVO get(@PathVariable("id")Long id){

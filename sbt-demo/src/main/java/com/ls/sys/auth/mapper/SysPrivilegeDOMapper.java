@@ -13,4 +13,6 @@ public interface SysPrivilegeDOMapper {
     List<SysPrivilegeDO> selectAll();
 
     int updateByPrimaryKey(SysPrivilegeDO record);
+
+    List<SysPrivilegeDO> selectSysPrivilegeDOBySysRoleId(Long roleId);
 }

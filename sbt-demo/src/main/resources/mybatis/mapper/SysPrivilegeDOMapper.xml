@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ls.sys.auth.mapper.SysPrivilegeDOMapper">
+
     <resultMap id="BaseResultMap" type="com.ls.sys.auth.domain.DO.SysPrivilegeDO">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="privilege_name" jdbcType="VARCHAR" property="privilegeName"/>
         <result column="privilege_url" jdbcType="VARCHAR" property="privilegeUrl"/>
     </resultMap>
+
+    <select id="selectSysPrivilegeDOBySysRoleId" resultMap="BaseResultMap">
+        select p.id,
+        p.privilege_name,
+        p.privilege_url
+        from sys_privilege p
+        inner join sys_role_privilege r_p on r_p.privilege_id = p.id
+        where
+        r_p.role_id = #{roleId}
+    </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from sys_privilege
     where id = #{id,jdbcType=BIGINT}
