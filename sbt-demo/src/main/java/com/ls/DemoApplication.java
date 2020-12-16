@@ -6,8 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScans({
-        @MapperScan("com.ls.user.mapper"),
-        @MapperScan("com.ls.employee.mapper")
+        @MapperScan("com.ls.sys.auth.mapper"),
 })
 @SpringBootApplication
 public class DemoApplication {

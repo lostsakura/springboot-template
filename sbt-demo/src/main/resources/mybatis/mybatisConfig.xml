@@ -9,7 +9,7 @@
     </settings>
 
     <typeAliases>
-
+        <package name="com.ls.sys.auth.domain"/>
     </typeAliases>
 
     <databaseIdProvider type="DB_VENDOR">

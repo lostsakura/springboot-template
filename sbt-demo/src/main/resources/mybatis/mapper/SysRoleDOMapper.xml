@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ls.sys.auth.mapper.SysRoleDOMapper">
+    <resultMap id="BaseResultMap" type="com.ls.sys.auth.domain.DO.SysRoleDO">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
+        <result column="enabled" jdbcType="INTEGER" property="enabled"/>
+        <result column="create_by" jdbcType="BIGINT" property="createBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <select id="selectSysRoleDOBySysUserId" resultMap="BaseResultMap">
+        select r.id, r.role_name, r.enabled, r.create_by, r.create_time
+        from sys_role r
+                 inner join sys_user_role u_r on u_r.role_id = r.id
+        where u_r.user_id = #{userId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from sys_role
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.ls.sys.auth.domain.DO.SysRoleDO">
+        insert into sys_role (id, role_name, enabled,
+                              create_by, create_time)
+        values (#{id,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{enabled,jdbcType=INTEGER},
+                #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.ls.sys.auth.domain.DO.SysRoleDO">
+        update sys_role
+        set role_name   = #{roleName,jdbcType=VARCHAR},
+            enabled     = #{enabled,jdbcType=INTEGER},
+            create_by   = #{createBy,jdbcType=BIGINT},
+            create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id, role_name, enabled, create_by, create_time
+        from sys_role
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, role_name, enabled, create_by, create_time
+        from sys_role
+    </select>
+</mapper>

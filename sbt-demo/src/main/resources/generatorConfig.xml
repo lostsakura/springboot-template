@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- targetRuntime="MyBatis3Simple"不会产生Example defaultModelType="flat"仅包含最基础的方法，并将所有字段放入一个POJO -->
+    <context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <!-- 为关键字包裹符号 该例仅限于MySQL -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 注释生成配置 -->
+        <commentGenerator>
+            <!-- 阻止生成所有的注释 -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 阻止生成的注释中带有时间戳 -->
+<!--            <property name="suppressDate" value="true"/>-->
+            <!-- 注释中是否添加数据库表的备注信息 -->
+<!--            <property name="addRemarkComments" value="true"/>-->
+        </commentGenerator>
+
+        <!-- 数据库连接信息配置 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://test.com:3306/ls_test?setTimezone=UTC&amp;useSSL=false&amp;chacracterEncoding=UTF-8"
+                        userId="root" password="qq282465134">
+            <!-- 设置开箱可以获取Oracle数据库的注释属性 -->
+            <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+
+        <!-- 指定jdbc类型和java类型之间如何转换 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 控制java实体类生成 -->
+        <javaModelGenerator targetPackage="com.ls.sys.auth.domain.DO" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="false"/>
+            <!-- 实体类的属性是否需要去除空格 -->
+<!--            <property name="trimStrings" value="true"/>-->
+            <property name="rootClass" value="com.ls.sys.core.domain.BaseDO"/>
+        </javaModelGenerator>
+
+        <!-- 控制mapper.xml生成 -->
+        <sqlMapGenerator targetPackage="com.ls.sys.auth.mapper" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- 控制Mapper接口生成 type="XMLMAPPER(基于XML)|ANNOTATEDMAPPER(基于注解)|MIXEDMAPPER(混合)" -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ls.sys.auth.mapper" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- tableName="%" 生成全部的表 -->
+<!--        <table tableName="sys_user" domainObjectName="SysUserDO" enableCountByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+<!--               selectByExampleQueryId="false"/>-->
+<!--        <table tableName="sys_role" domainObjectName="SysRoleDO" enableCountByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+<!--               selectByExampleQueryId="false"/>-->
+        <table tableName="sys_user" domainObjectName="SysUserDO"/>
+        <table tableName="sys_role" domainObjectName="SysRoleDO"/>
+        <table tableName="sys_privilege" domainObjectName="SysPrivilegeDO"/>
+
+    </context>
+</generatorConfiguration>

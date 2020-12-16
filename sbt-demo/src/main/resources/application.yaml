@@ -8,7 +8,6 @@ spring:
     username: root
     password: qq282465134
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   config-location: classpath:mybatis/mybatisConfig.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
