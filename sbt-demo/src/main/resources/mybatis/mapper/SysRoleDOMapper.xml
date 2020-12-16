@@ -15,19 +15,26 @@
                     select="com.ls.sys.auth.mapper.SysPrivilegeDOMapper.selectSysPrivilegeDOBySysRoleId"
                     column="{roleId=id}"/>
     </resultMap>
+    
+    <resultMap id="RolePrivilegeWithChoose" type="com.ls.sys.auth.domain.DO.SysRoleDO">
+        <discriminator javaType="int" column="enabled">
+            <case value="0" resultMap="BaseResultMap"/>
+            <case value="1" resultMap="RolePrivilegeMap"/>
+        </discriminator>
+    </resultMap>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="RolePrivilegeMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="RolePrivilegeWithChoose">
         select r.id, r.role_name, r.enabled, r.create_by, r.create_time
         from sys_role r
         where r.id = #{id,jdbcType=BIGINT}
     </select>
 
-    <select id="selectAll" resultMap="RolePrivilegeMap">
+    <select id="selectAll" resultMap="RolePrivilegeWithChoose">
         select id, role_name, enabled, create_by, create_time
         from sys_role
     </select>
 
-    <select id="selectSysRoleDOBySysUserId" resultMap="RolePrivilegeMap">
+    <select id="selectSysRoleDOBySysUserId" resultMap="RolePrivilegeWithChoose">
         select r.id,
                r.role_name,
                r.enabled,
