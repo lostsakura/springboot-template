@@ -1,6 +1,7 @@
 package com.ls.sys.auth.mapper;
 
 import com.ls.sys.auth.domain.DO.SysUserDO;
+import org.apache.ibatis.annotations.CacheNamespaceRef;
 
 import java.util.List;
 

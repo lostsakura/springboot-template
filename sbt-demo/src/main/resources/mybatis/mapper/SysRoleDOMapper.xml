@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ls.sys.auth.mapper.SysRoleDOMapper">
+<!--    <cache-ref namespace="com.ls.sys.auth.mapper.SysPrivilegeDOMapper"/>-->
+<!--    <cache eviction="FIFO" flushInterval="60000" size="512" readOnly="false" type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
 
     <resultMap id="BaseResultMap" type="com.ls.sys.auth.domain.DO.SysRoleDO">
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -10,8 +12,9 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
+    <!-- 开启缓存后需要设置fetchType="eager"，全局的懒加载也需要关闭 -->
     <resultMap id="RolePrivilegeMap" type="com.ls.sys.auth.domain.DO.SysRoleDO" extends="BaseResultMap">
-        <collection property="privilegeList" fetchType="lazy"
+        <collection property="privilegeList" fetchType="eager"
                     select="com.ls.sys.auth.mapper.SysPrivilegeDOMapper.selectSysPrivilegeDOBySysRoleId"
                     column="{roleId=id}"/>
     </resultMap>

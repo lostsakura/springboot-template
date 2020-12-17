@@ -11,3 +11,6 @@ spring:
 mybatis:
   config-location: classpath:mybatis/mybatisConfig.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level:
+    com.ls.sys.auth.mapper: debug

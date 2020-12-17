@@ -4,8 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
-        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 开启cache后需要关闭懒加载，同时关闭逐个语句的懒加载 -->
+        <setting name="lazyLoadingEnabled" value="false"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="cacheEnabled" value="false"/>
     </settings>
 
     <typeAliases>

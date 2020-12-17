@@ -1,6 +1,8 @@
 package com.ls.sys.auth.mapper;
 
 import com.ls.sys.auth.domain.DO.SysPrivilegeDO;
+import org.apache.ibatis.annotations.CacheNamespaceRef;
+
 import java.util.List;
 
 public interface SysPrivilegeDOMapper {
