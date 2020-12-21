@@ -37,7 +37,7 @@
         </javaTypeResolver>
 
         <!-- 控制java实体类生成 -->
-        <javaModelGenerator targetPackage="com.ls.sys.auth.domain.DO" targetProject=".\src\main\java">
+        <javaModelGenerator targetPackage="com.ls.work.domain.DO" targetProject=".\src\main\java">
             <property name="enableSubPackages" value="false"/>
             <!-- 实体类的属性是否需要去除空格 -->
 <!--            <property name="trimStrings" value="true"/>-->
@@ -45,12 +45,12 @@
         </javaModelGenerator>
 
         <!-- 控制mapper.xml生成 -->
-        <sqlMapGenerator targetPackage="com.ls.sys.auth.mapper" targetProject=".\src\main\java">
+        <sqlMapGenerator targetPackage="com.ls.work.mapper" targetProject=".\src\main\java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- 控制Mapper接口生成 type="XMLMAPPER(基于XML)|ANNOTATEDMAPPER(基于注解)|MIXEDMAPPER(混合)" -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ls.sys.auth.mapper" targetProject=".\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ls.work.mapper" targetProject=".\src\main\java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
@@ -61,9 +61,8 @@
 <!--        <table tableName="sys_role" domainObjectName="SysRoleDO" enableCountByExample="false"-->
 <!--               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
 <!--               selectByExampleQueryId="false"/>-->
-        <table tableName="sys_user" domainObjectName="SysUserDO"/>
-        <table tableName="sys_role" domainObjectName="SysRoleDO"/>
-        <table tableName="sys_privilege" domainObjectName="SysPrivilegeDO"/>
+        <table tableName="t_department" domainObjectName="WorkDepartmentDO"/>
+        <table tableName="t_employee" domainObjectName="WorkEmployeeDO"/>
 
     </context>
 </generatorConfiguration>

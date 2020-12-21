@@ -1,0 +1,21 @@
+server:
+  port: 9080
+  servlet:
+    context-path: /sbt-dev
+spring:
+  application:
+    name: sbt-demo2
+  datasource:
+    url: jdbc:mysql://test.com:3306/ls_test?setTimezone=UTC&useSSL=false&chacracterEncoding=UTF-8
+    username: root
+    password: qq282465134
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: test.com
+    port: 6379
+    database: 12
+logging:
+  file:
+    name: logs/sbt-demo2-dev.log
+  level:
+    com.ls.work.mapper: debug

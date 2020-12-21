@@ -6,11 +6,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScans({
-        @MapperScan("com.ls.sys.auth.mapper")
+        @MapperScan("com.ls.work.mapper")
 })
 @SpringBootApplication
-public class DemoApplication {
+public class Demo2Application {
+
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class);
+        SpringApplication.run(Demo2Application.class);
     }
 }
