@@ -1,4 +1,4 @@
-package com.ls;
+package com.ls.sys;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.annotation.MapperScans;
@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         @MapperScan("com.ls.sys.auth.mapper")
 })
 @SpringBootApplication
-public class DemoApplication {
+public class SysApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class);
+        SpringApplication.run(SysApplication.class);
     }
 }

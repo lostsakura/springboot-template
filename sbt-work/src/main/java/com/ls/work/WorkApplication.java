@@ -1,4 +1,4 @@
-package com.ls;
+package com.ls.work;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.annotation.MapperScans;
@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         @MapperScan("com.ls.work.mapper")
 })
 @SpringBootApplication
-public class Demo2Application {
+public class WorkApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo2Application.class);
+        SpringApplication.run(WorkApplication.class);
     }
 }

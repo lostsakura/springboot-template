@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo2</artifactId>
+    <artifactId>sbt-work</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

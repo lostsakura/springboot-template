@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>sbt-demo</module>
-        <module>demo2</module>
+        <module>sbt-sys</module>
+        <module>sbt-work</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

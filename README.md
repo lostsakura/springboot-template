@@ -7,5 +7,5 @@
 * lombok 1.18.12
 * MapStruct 1.3.1.Final
 * MyBatis 3.5.6
-* 
+* Mybatis-plus 3.4.1
 
